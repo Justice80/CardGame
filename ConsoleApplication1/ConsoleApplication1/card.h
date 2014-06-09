@@ -22,6 +22,7 @@ public:
 	void setValue(int v);
 
 	friend ostream& operator<<(ostream& str, const Card& c);
+	bool operator==(Card& c);
 };
 
 #endif

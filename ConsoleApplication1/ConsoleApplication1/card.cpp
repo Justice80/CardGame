@@ -15,6 +15,10 @@ void Card::setValue(int v) {
 	value = (v >= 1 && v <= 13) ? v : 1;
 }
 
+bool Card::operator==(Card& c) {
+	return (getSuit() == c.getSuit() && getValue() == c.getValue());
+}
+
 ostream& operator<<(ostream& str, const Card& c) {
 	if (c.value == 13) str << "King";
 	else if (c.value == 12) str << "Queen";

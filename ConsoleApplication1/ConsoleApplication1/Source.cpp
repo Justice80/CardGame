@@ -21,7 +21,7 @@ void filldeck(stack<Card*>& cards) {
 		c = new Card(rand() % 4 + 1, rand() % 13 + 1);
 		found = false;
 		for (int i = 0; !found && i < tmp.size(); i++) {
-			found = (tmp[i]->getSuit() == c->getSuit() && tmp[i]->getValue() == c->getValue());
+			found = (*tmp[i] == *c);
 		}
 		if (!found)
 			tmp.push_back(c);
